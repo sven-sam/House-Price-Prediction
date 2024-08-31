@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            background-image: url('static/pexels-vividcafe-681331.jpg'); 
+            background-size: cover;
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        
+        h1 {
+            font-size: 36px; 
+            margin-bottom: 20px; 
+        }
+        
+        form {
+            text-align: left; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="UNDER_CONSTRUCTION">Under Construction:</label>
+            <input type="number" id="UNDER_CONSTRUCTION" name="UNDER_CONSTRUCTION" min="0" max="1" required><br><br>
+            
+            <label for="RERA">RERA:</label>
+            <input type="number" id="RERA" name="RERA" min="0" max="1" required><br><br>
+            
+            <label for="BHK_NO.">BHK Number:</label>
+            <input type="number" id="BHK_NO." name="BHK_NO." min="1" required><br><br>
+            
+            <label for="BHK_OR_RK">BHK or RK:</label>
+            <select id="BHK_OR_RK" name="BHK_OR_RK" required>
+                <option value="BHK">BHK</option>
+                <option value="RK">RK</option>
+            </select><br><br>
+            
+            <label for="SQUARE_FT">Square Feet:</label>
+            <input type="number" id="SQUARE_FT" name="SQUARE_FT" min="1" required><br><br>
+            
+            <label for="READY_TO_MOVE">Ready to Move:</label>
+            <input type="number" id="READY_TO_MOVE" name="READY_TO_MOVE" min="0" max="1" required><br><br>
+            
+            <label for="RESALE">Resale:</label>
+            <input type="number" id="RESALE" name="RESALE" min="0" max="1" required><br><br>
+            
+            <label for="POSTED_BY">Posted By:</label>
+            <select id="POSTED_BY" name="POSTED_BY" required>
+                <option value="Owner">Owner</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Builder">Builder</option>
+            </select><br><br>
+            
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>
